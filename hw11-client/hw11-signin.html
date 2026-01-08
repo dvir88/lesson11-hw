@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Signin</h1>
+    <form action="/signin" method="post">
+        <input type="text" name="user" placeholder="enter name">
+        <input type="text" name="age" placeholder="enter age">
+        <input type="submit" value="Send Details">
+    </form>
+
+    <h1>Fetch</h1>
+<form>
+    <input type="text" placeholder="Enter Name" id="user">
+    <input type="text" placeholder="Enter Age" id="age">
+    <div id="response"></div>
+    <button onclick="postDetails(event)">signin</button>
+</form>
+
+<script src="script.js"></script>
+
+</body>
+</html>
