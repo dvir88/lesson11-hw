@@ -1,27 +1,49 @@
 async function postDetails(event) {
     event.preventDefault()
     const user  = document.getElementById("user").value
-    const age = document.getElementById("age").value
     const div = document.getElementById("response")
 
-    //option 1
-    // fetch("/signin/fetch", {
-    //     headers:{"Content-Type":"application/json"},
-    //     method:"POST",
-    //     body:JSON.stringify({user,age})
-    // }).then(res => res.text().then(data => {
-    //     console.log(first)
-    //     div.textContent = data
-    // }))
     try {
-        const response = await fetch("/signin/fetch", {
+        const response = await fetch("/hw11-signin/fetch",{
          headers:{"Content-Type":"application/json"},
          method:"POST",
-         body:JSON.stringify({user,age}),
+         body:JSON.stringify({user}),
         });
         const text = await response.text()
         div.textContent = text
+
+        if(text.startsWith(`Welcome ${user}`)){
+            setTimeout(()=> {
+                window.location.href = "/hw11-index.html"
+            }, 2000)
+        }
     } catch (error) {
-        console.log("error");
+        console.log("error", error);
+    }
+}
+
+async function postSingup(event) {
+    event.preventDefault()
+    const username  = document.getElementById("username").value
+    const email  = document.getElementById("email").value
+    const password  = document.getElementById("password").value
+    const confirmPassword  = document.getElementById("confirmPassword").value
+    const div = document.getElementById("SignupResponse")
+
+    try {
+        const response = await fetch("/hw11-index/fetch",{
+         headers:{"Content-Type":"application/json"},
+         method:"POST",
+         body:JSON.stringify({username, email, password, confirmPassword}),
+        });
+        const text = await response.text()
+        div.textContent = text
+
+        setTimeout(() => {
+        window.location.href = "/home"
+        }, 2000)
+
+    } catch (error) {
+        console.log("error", error);
     }
 }

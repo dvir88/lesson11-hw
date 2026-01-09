@@ -6,22 +6,16 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Signin</h1>
-    <form action="/signin" method="post">
-        <input type="text" name="user" placeholder="enter name">
-        <input type="text" name="age" placeholder="enter age">
-        <input type="submit" value="Send Details">
-    </form>
 
-    <h1>Fetch</h1>
 <form>
-    <input type="text" placeholder="Enter Name" id="user">
-    <input type="text" placeholder="Enter Age" id="age">
+    <h3>Name</h3>
+    <input type="text" placeholder="Enter your full Name" id="user">
     <div id="response"></div>
-    <button onclick="postDetails(event)">signin</button>
+    <br><br>
+    <button type="button" onclick="postDetails(event)">Start</button>
 </form>
 
-<script src="script.js"></script>
+<script src="hw11-script.js"></script>
 
 </body>
 </html>
